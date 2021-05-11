@@ -10,7 +10,7 @@ Binutils: https://ftp.gnu.org/gnu/binutils/binutils-2.36.tar.xz
 
 How to build: https://wiki.osdev.org/GCC_Cross-Compiler#The_Build
 
-#Using the cross-compiler
+### Using the cross-compiler
 In a new terminal session,
 ```
 export TARGET=i686-elf
