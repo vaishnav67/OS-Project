@@ -13,14 +13,13 @@ How to build: https://wiki.osdev.org/GCC_Cross-Compiler#The_Build
 ### Using the cross-compiler
 In a new terminal session,
 ```
-export TARGET=i686-elf
 export PATH="$HOME/opt/cross/bin:$PATH"
 ```
 To use the GNU Compiler Collection (GCC):
 ```
-$TARGET-gcc <args>
+i686-elf-gcc <args>
 ```
 To use the GNU Assembler:
 ```
-$TARGET-as <args>
+i686-elf-as <args>
 ```
