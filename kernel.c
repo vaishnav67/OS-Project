@@ -87,7 +87,7 @@ void terminal_putchar(char c)
 {
 	switch (c)
 	{
-	case '\n': // Newline characters should return the column to 0, and increment the row
+	case '\n':
 		{
 			terminal_column = 0;
 			terminal_row ++;
@@ -108,16 +108,59 @@ void terminal_write(const char* data, size_t size)
 	for (size_t i = 0; i < size; i++)
 		terminal_putchar(data[i]);
 }
- 
+
+void terminal_clear()
+{
+	terminal_row=0;
+	terminal_column=0;
+	for(size_t i = 0; i < VGA_HEIGHT; i++)
+	{
+		for(size_t j = 0; j < VGA_WIDTH; j++)
+		{
+			terminal_putchar(' ');
+		}
+	}
+	terminal_row=0;
+	terminal_column=0;
+}
+
 void terminal_writestring(const char* data) 
 {
+	if(terminal_row==VGA_HEIGHT)
+	{
+		terminal_clear();
+	}
 	terminal_write(data, strlen(data));
 }
  
 void kernel_main(void) 
 {
-	/* Initialize terminal interface */
 	terminal_initialize();
- 
 	terminal_writestring("Hello, kernel World!\n");
+	terminal_writestring("Newline 2\n");
+	terminal_writestring("Newline 3\n");
+	terminal_writestring("Newline 4\n");
+	terminal_writestring("Newline 5\n");
+	terminal_writestring("Newline 6\n");
+	terminal_writestring("Newline 7\n");
+	terminal_writestring("Newline 8\n");
+	terminal_writestring("Newline 9\n");
+	terminal_writestring("Newline 10\n");
+	terminal_writestring("Newline 11\n");
+	terminal_writestring("Newline 12\n");
+	terminal_writestring("Newline 13\n");
+	terminal_writestring("Newline 14\n");
+	terminal_writestring("Newline 15\n");
+	terminal_writestring("Newline 16\n");
+	terminal_writestring("Newline 17\n");
+	terminal_writestring("Newline 18\n");
+	terminal_writestring("Newline 19\n");
+	terminal_writestring("Newline 20\n");
+	terminal_writestring("Newline 21\n");
+	terminal_writestring("Newline 22\n");
+	terminal_writestring("Newline 23\n");
+	terminal_writestring("Newline 24\n");
+	terminal_writestring("Newline 25\n");
+	terminal_writestring("Newline 26\n");
+	terminal_writestring("Newline 27\n");
 }
