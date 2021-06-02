@@ -23,3 +23,5 @@ To use the GNU Assembler:
 ```
 i686-elf-as <args>
 ```
+ # Build
+ Execute `build.sh`
